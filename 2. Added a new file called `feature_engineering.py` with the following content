@@ -1,0 +1,15 @@
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+
+def feature_engineering(data):
+    # Drop the target variable
+    data = data.drop('PRICE', axis=1)
+
+    # Add a new feature for the square of the number of rooms
+    data['SQFT'] = data['LSTAT'] ** 2
+
+    # Scale the features using StandardScaler
+    scaler = StandardScaler()
+    scaled_data = scaler.fit_transform(data)
+
+    return scaled_data
