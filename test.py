@@ -1,12 +1,12 @@
 import numpy as np
 import pandas as pd
-from sklearn.datasets import fetch_california_housing
+from sklearn.datasets import load_boston
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 
 # Fetch and split the dataset
-data = fetch_california_housing()
+data = load_boston()
 X = pd.DataFrame(data['data'], columns=data['feature_names'])
 y = pd.Series(data['target'])
 
