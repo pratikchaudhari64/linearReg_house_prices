@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 from sklearn.datasets import fetch_california_housing
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
+from sklearn.tree import DecisionTreeRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 
 # Fetch and split the dataset
@@ -12,8 +12,8 @@ y = pd.Series(data['target'])
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# Create and train the model
-model = LinearRegression()
+# Create and train the model with Decision Tree Regressor
+model = DecisionTreeRegressor(max_depth=5, min_samples_split=10, random_state=42)
 model.fit(X_train, y_train)
 
 # Make predictions
