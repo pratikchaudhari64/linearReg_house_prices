@@ -1,0 +1,61 @@
+# Numeric Features:
+1. GarageCars: Size of garage in car capacity
+2. GarageArea: Size of garage in square feet
+3. PoolArea: Pool area in square feet
+4. MiscVal: $Value of miscellaneous feature (assuming this is a monetary value)
+5. MoSold: Month Sold (MM) - assuming this is an integer value
+6. YrSold: Year Sold (YYYY) - assuming this is an integer value
+
+# Categorical Features:
+1. GarageType:
+	* 2Types: More than one type of garage
+	* Attchd: Attached to home
+	* Basement: Basement Garage
+	* BuiltIn: Built-In (Garage part of house - typically has room above garage)
+	* CarPort: Car Port
+	* Detchd: Detached from home
+2. GarageFinish:
+	* Fin: Finished
+	* RFn: Rough Finished
+	* Unf: Unfinished
+3. GarageQual:
+	* Ex: Excellent
+	* Gd: Good
+	* TA: Typical/Average
+	* Fa: Fair
+	* Po: Poor
+4. GarageCond:
+	* Ex: Excellent
+	* Gd: Good
+	* TA: Typical/Average
+	* Fa: Fair
+	* Po: Poor
+5. Fence:
+	* GdPrv: Good Privacy
+	* MnPrv: Minimum Privacy
+	* GdWo: Good Wood
+	* MnWw: Minimum Wood/Wire
+6. MiscFeature:
+	* Elev: Elevator
+	* Gar2: 2nd Garage (if not described in garage section)
+	* Othr: Other
+	* Shed: Shed (over 100 SF)
+	* TenC: Tennis Court
+7. SaleType:
+	* WD: Warranty Deed - Conventional
+	* CWD: Warranty Deed - Cash
+	* VWD: Warranty Deed - VA Loan
+	* New: Home just constructed and sold
+	* COD: Court Officer Deed/Estate
+	* Con: Contract 15% Down payment regular terms
+	* ConLw: Contract Low Down payment and low interest
+	* ConLI: Contract Low Interest
+	* ConLD: Contract Low Down
+	* Oth: Other
+8. SaleCondition:
+	* Normal: Normal Sale
+	* Abnorml: Abnormal Sale - trade, foreclosure, short sale
+	* AdjLand: Adjoining Land Purchase
+	* Alloca: Allocation - two linked properties with separate deeds, typically condo with a garage unit
+	* Family: Sale between family members
+	* Partial: Home was not completed when last assessed (associated with home improvement)
