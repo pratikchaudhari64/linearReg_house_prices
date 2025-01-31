@@ -1,3 +1,4 @@
+# AI: refactor this code, such that i can compare scores of 2 models separately. So, run DecionTreeRegressor on the dataset, then also run LinearRegresson on the dataset....
 import numpy as np
 import pandas as pd
 from sklearn.datasets import load_boston
@@ -25,3 +26,5 @@ r2 = r2_score(y_test, y_pred)
 
 print(f"Test MSE: {mse}")
 print(f"R² score: {r2}")
+
+#...display scores on testing set for both models separately. AI?
