@@ -187,6 +187,8 @@ class feat_engg():
 
         return preprocessors
     
+    # Create new function prep9(self, *cols_list) here (within feat_engg()). This inputs a packed list of column selectors and outputs columntransformer object. This function is very similar to the other functions within feat_engg() in it's structure. AI?
+    
 
 
 class missing_imputers():
