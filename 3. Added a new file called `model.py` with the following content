@@ -1,0 +1,10 @@
+import numpy as np
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.metrics import mean_squared_error, r2_score
+
+def train_model(X_train, y_train):
+    # Create and train the model with Decision Tree Regressor
+    model = DecisionTreeRegressor(max_depth=5, min_samples_split=10, random_state=42)
+    model.fit(X_train, y_train)
+
+    return model
