@@ -20,6 +20,39 @@ from sklearn.model_selection import cross_validate
 from sklearn.impute import KNNImputer
 from sklearn.tree import DecisionTreeRegressor, plot_tree
 
+class feature_dtypes():
+
+    def __init__(self, trainset, testset):
+        self.trainset = trainset
+        self.testset = testset
+        
+        self.chg_to_category = ['MSSubClass', 'MSZoning', 'Street', 'Alley', 'LotShape',
+                   'LandContour', 'Utilities', 'LotConfig', 'LandSlope', 
+                   'Neighborhood', 'Condition1', 'Condition2', 'BldgType',
+                   'HouseStyle', 'RoofStyle', 'RoofMatl', 'Exterior1st',
+                   'Exterior2nd', 'MasVnrType', 'ExterQual', 'ExterCond', 
+                   'Foundation', 'BsmtQual', 'BsmtCond', 'BsmtExposure',
+                   'BsmtFinType1', 'BsmtFinType2', 'Heating', 'HeatingQC', 
+                   'CentralAir', 'Electrical', 'KitchenQual', 'Functional',
+                   'FireplaceQu', 'GarageType', 'GarageFinish', 'GarageQual', 
+                   'GarageCond', 'PavedDrive', 'PoolQC', 'Fence', 'MiscFeature', 
+                'SaleType', 'SaleCondition']
+        
+        self.chg_to_numer = ['LotFrontage', 'LotArea', 'OverallQual', 'OverallCond', 
+                'YearBuilt', 'YearRemodAdd', 'MasVnrArea', 'BsmtFinSF1',
+                'BsmtFinSF2', 'BsmtUnfSF', 'TotalBsmtSF', '1stFlrSF', '2ndFlrSF',
+                'LowQualFinSF', 'GrLivArea', 'BsmtFullBath', 'BsmtHalfBath', 
+                'FullBath', 'HalfBath', 'BedroomAbvGr', 'KitchenAbvGr', 
+                'TotRmsAbvGrd', 'Fireplaces', 'GarageYrBlt', 'GarageCars', 
+                'GarageArea', 'WoodDeckSF', 'OpenPorchSF', 'EnclosedPorch',
+                '3SsnPorch', 'ScreenPorch', 'PoolArea', 'MiscVal', 'YrSold',
+                'MoSold'
+                ]
+
+        pass
+
+
+
 
 class feat_engg():
 
@@ -188,8 +221,6 @@ class feat_engg():
         return preprocessors
     
     # Create new function prep9(self, *cols_list) here (within feat_engg()). This inputs a packed list of column selectors and outputs columntransformer object. This function is very similar to the other functions within feat_engg() in it's structure. AI?
-    
-
 
 class missing_imputers():
 
