@@ -5,10 +5,12 @@
 
 import pandas as pd
 import preprocessors
+import store
 from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler, OrdinalEncoder
 from sklearn.linear_model import LinearRegression
+
 
 
 #Convert dtypes as a custom transformer
@@ -18,16 +20,20 @@ def train_pipeline_and_model(X, y):
     # feat_dtypes.enforce_dtypes()
 
     prep_pipeline = Pipeline([
-        ('dtype_converter', preprocessors.DtypeConverter()),
-        ('num_imputer', preprocessors.NumSimpleImputer(imputer=SimpleImputer(strategy='mean').set_output(transform="pandas"))),  # numeric columns imputer
-        ('cat_imputer', preprocessors.CatSimpleImputer(imputer= SimpleImputer(strategy='constant',fill_value='NA').set_output(transform="pandas"))),  # categorical imputer
-        ('standardscaler', preprocessors.NumNormalizer(normalizer= StandardScaler().set_output(transform="pandas"))),
-        ('catencoder', preprocessors.CatNormalizer(normalizer = OrdinalEncoder().set_output(transform= "pandas"))) 
-        ])
+        ('preprocessing', store.create_pipeline_v1())
+    ])
+
+    # prep_pipeline = Pipeline([
+    #     ('dtype_converter', preprocessors.DtypeConverter()),
+    #     ('num_imputer', preprocessors.NumSimpleImputer(imputer=SimpleImputer(strategy='mean').set_output(transform="pandas"))),  # numeric columns imputer
+    #     ('cat_imputer', preprocessors.CatSimpleImputer(imputer= SimpleImputer(strategy='constant',fill_value='NA').set_output(transform="pandas"))),  # categorical imputer
+    #     ('standardscaler', preprocessors.NumNormalizer(normalizer= StandardScaler().set_output(transform="pandas"))),
+    #     ('catencoder', preprocessors.CatNormalizer(normalizer = OrdinalEncoder().set_output(transform= "pandas"))) 
+    #     ])
 
     X_transformed = prep_pipeline.fit_transform(X)
 
-    model = LinearRegression().fit(X_transformed, y)
+    model = store.create_linear_regression_model().fit(X_transformed, y)
 
     print("...model training finished.")
 
